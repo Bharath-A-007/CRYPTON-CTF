@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>8 - API Adventure</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #007cba;
+            margin: 25px 0;
+        }
+        .hint-box { 
+            background: #d1ecf1; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 5px solid #17a2b8;
+            margin: 25px 0;
+        }
+        .api-info {
+            background: #fff3cd;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .endpoint-box {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+            text-align: center;
+            border: 2px dashed #6c757d;
+        }
+        .tool-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .cta-button {
+            background: #28a745; 
+            color: white; 
+            padding: 15px 30px; 
+            border-radius: 8px; 
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .cta-button:hover { 
+            background: #218838; 
+            transform: translateY(-2px);
+        }
+        code {
+            background: #e9ecef;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        .method-examples {
+            background: #d4edda;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Challenge 8: API Adventure</h1>
+        <p><strong>Category: Web Exploitation • Points: 200</strong></p>
+        
+        <p>"We built a simple book API. Your goal is to find the details of the book with ID 0. The endpoint is provided below."</p>
+
+        <div class="instructions">
+            <h3>🎯 Your Mission:</h3>
+            <p>APIs (Application Programming Interfaces) allow programs to communicate with each other. Your task is to query the book API endpoint to find information about a specific book.</p>
+        </div>
+
+        <div class="api-info">
+            <h3>📚 Book API Endpoint:</h3>
+            <div class="endpoint-box">
+                <strong>GET</strong> https://crypton-ctf-platform.onrender.com/api/books/0
+            </div>
+            <p>This API returns book information in JSON format. Try accessing it to find the flag!</p>
+        </div>
+
+        <div class="hint-box">
+            <h3>💡 Hint:</h3>
+            <p>Websites often provide data through API endpoints. You can request information directly from these endpoints using various tools.</p>
+        </div>
+
+        <div class="tool-info">
+            <h3>🔧 How to Access the API:</h3>
+            
+            <h4>Web Browser (Easiest):</h4>
+            <p>Simply visit the endpoint URL in your browser:</p>
+            <code>https://crypton-ctf-platform.onrender.com/api/books/0</code>
+
+            <h4>Command Line (curl):</h4>
+            <code>curl https://crypton-ctf-platform.onrender.com/api/books/0</code>
+
+            <h4>JavaScript (Browser Console):</h4>
+            <code>fetch('https://crypton-ctf-platform.onrender.com/api/books/0')<br>.then(response => response.json())<br>.then(data => console.log(data));</code>
+
+            <h4>Python:</h4>
+            <code>import requests<br>response = requests.get('https://crypton-ctf-platform.onrender.com/api/books/0')<br>print(response.json())</code>
+        </div>
+
+        <div class="method-examples">
+            <h3>🔍 Expected Response Format:</h3>
+            <p>The API will return JSON data that might look like:</p>
+            <code>
+            {<br>
+            &nbsp;&nbsp;"id": 0,<br>
+            &nbsp;&nbsp;"title": "Book Title",<br>
+            &nbsp;&nbsp;"author": "Author Name",<br>
+            &nbsp;&nbsp;"flag": "CRYPTON{...}"<br>
+            }
+            </code>
+        </div>
+
+        <div style="background: #e7f3ff; padding: 20px; border-radius: 8px; margin: 25px 0;">
+            <h3>📖 About REST APIs:</h3>
+            <p>REST (Representational State Transfer) APIs use standard HTTP methods to perform operations:</p>
+            <ul>
+                <li><strong>GET:</strong> Retrieve data (used in this challenge)</li>
+                <li><strong>POST:</strong> Create new data</li>
+                <li><strong>PUT:</strong> Update existing data</li>
+                <li><strong>DELETE:</strong> Remove data</li>
+            </ul>
+            <p>APIs are the backbone of modern web applications and mobile apps!</p>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="../../index.html" class="cta-button">
+                ← Back to All Challenges
+            </a>
+        </div>
+    </div>
+</body>
+</html>
