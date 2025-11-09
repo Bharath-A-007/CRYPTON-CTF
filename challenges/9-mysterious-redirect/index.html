@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>9 - Mysterious Redirect</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #007cba;
+            margin: 25px 0;
+        }
+        .hint-box { 
+            background: #d1ecf1; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 5px solid #17a2b8;
+            margin: 25px 0;
+        }
+        .link-box {
+            background: #fff3cd;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .demo-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+        .demo-link:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+        .cta-button {
+            background: #6c757d; 
+            color: white; 
+            padding: 12px 24px; 
+            border-radius: 8px; 
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .cta-button:hover { 
+            background: #545b62; 
+            transform: translateY(-2px);
+        }
+        code {
+            background: #e9ecef;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔀 Challenge 9: Mysterious Redirect</h1>
+        <p><strong>Category: Web Exploitation • Points: 350</strong></p>
+        
+        <p>"I was browsing a website and noticed something strange in the URL when I clicked a link. The URL changed in a weird way. Can you figure out what's hidden in the redirect?"</p>
+
+        <div class="instructions">
+            <h3>🎯 Your Mission:</h3>
+            <p>Websites often use URL parameters to control behavior. Your task is to explore how this page handles redirects and URL parameters to find the hidden flag.</p>
+        </div>
+
+        <div class="link-box">
+            <h3>🔗 Test Links:</h3>
+            <a href="redirect?page=home" class="demo-link">Visit Home Page</a>
+            <a href="redirect?page=about" class="demo-link">Visit About Page</a>
+            <a href="redirect?page=contact" class="demo-link">Visit Contact Page</a>
+            <br>
+            <p><small>Observe what happens when you click these links!</small></p>
+        </div>
+
+        <div class="hint-box">
+            <h3>💡 Hint:</h3>
+            <p>Sometimes websites have hidden pages or special parameters that aren't linked normally. What happens if you try different parameter values?</p>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 25px 0;">
+            <h3>🔍 About URL Parameters:</h3>
+            <p>URL parameters are the key-value pairs after the <code>?</code> in a URL. For example:</p>
+            <code>https://example.com/page?param1=value1&amp;param2=value2</code>
+            <p>Web applications use these parameters to control what content to show.</p>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="../../index.html" class="cta-button">
+                ← Back to All Challenges
+            </a>
+        </div>
+    </div>
+</body>
+</html>
