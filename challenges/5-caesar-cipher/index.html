@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>5 - Caesar Cipher</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .encoded-text {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.2em;
+            text-align: center;
+            margin: 20px 0;
+            border: 2px dashed #6c757d;
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #007cba;
+            margin: 25px 0;
+        }
+        .hint-box { 
+            background: #d1ecf1; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 5px solid #17a2b8;
+            margin: 25px 0;
+        }
+        .history-box {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+        .cta-button {
+            background: #28a745; 
+            color: white; 
+            padding: 15px 30px; 
+            border-radius: 8px; 
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .cta-button:hover { 
+            background: #218838; 
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Challenge 5: Caesar Cipher</h1>
+        <p><strong>Category: Cryptography • Points: 100</strong></p>
+        
+        <p>"Julius Caesar used this to protect his messages. Can you decode this?"</p>
+
+        <div class="encoded-text">
+            FUBJQBO{gur_pbqr_vf_3}
+        </div>
+
+        <div class="instructions">
+            <h3>🎯 Your Mission:</h3>
+            <p>This message has been encrypted using a Caesar cipher. Your task is to decipher it to reveal the hidden flag!</p>
+        </div>
+
+        <div class="hint-box">
+            <h3>💡 Hint:</h3>
+            <p>Julius Caesar used this cipher with a shift of 3, but this one might use a different shift. Look for patterns in the text.</p>
+        </div>
+
+        <div class="history-box">
+            <h3>📜 Historical Context:</h3>
+            <p>The Caesar cipher is one of the oldest and simplest encryption techniques. It works by shifting each letter in the alphabet by a fixed number of positions.</p>
+            <p>For example, with a shift of 3:</p>
+            <ul>
+                <li>A → D</li>
+                <li>B → E</li>
+                <li>C → F</li>
+                <li>... and so on</li>
+            </ul>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 25px 0;">
+            <h3>🔍 Observation:</h3>
+            <p>Notice the structure: <code>FUBJQBO{...}</code> looks similar to <code>CRYPTON{...}</code></p>
+            <p>This might give you a clue about the shift amount!</p>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="../../index.html" class="cta-button">
+                ← Back to All Challenges
+            </a>
+        </div>
+    </div>
+</body>
+</html>
