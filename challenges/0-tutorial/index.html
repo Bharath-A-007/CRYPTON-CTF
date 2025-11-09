@@ -3,29 +3,158 @@
 <head>
     <title>0 - Tutorial Challenge</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        .flag { background: #d4edda; padding: 10px; border-radius: 5px; font-family: monospace; }
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .flag-box { 
+            background: #d4edda; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 5px solid #28a745;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #007cba;
+            margin: 25px 0;
+        }
+        .scoring-info {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #ffc107;
+            margin: 20px 0;
+        }
+        .step {
+            margin: 15px 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #6c757d;
+        }
+        .cta-button {
+            background: #28a745; 
+            color: white; 
+            padding: 15px 30px; 
+            border-radius: 8px; 
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .cta-button:hover { 
+            background: #218838; 
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .secondary-button {
+            background: #6c757d;
+        }
+        .secondary-button:hover {
+            background: #545b62;
+        }
+        code {
+            background: #e9ecef;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+        .flag-text {
+            font-family: 'Courier New', monospace;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #155724;
+        }
     </style>
 </head>
 <body>
-    <h1>🎓 Challenge 0: Tutorial</h1>
-    
-    <p>Welcome to your first CTF challenge! This is a tutorial to help you understand how Capture The Flag works.</p>
-    
-    <h2>📝 Instructions:</h2>
-    <ol>
-        <li>Find the flag on this page</li>
-        <li>Copy the flag: <code>CRYPTON{...}</code></li>
-        <li>Go to the <a href="https://crypton-ctf-platform.onrender.com" target="_blank">Scoring Platform</a></li>
-        <li>Submit the flag to earn points!</li>
-    </ol>
+    <div class="container">
+        <h1>🎓 Challenge 0: Tutorial</h1>
+        <p><strong>Category: General Skills • Points: 15</strong></p>
+        
+        <p>Welcome to your first CTF challenge! This is a tutorial to help you understand how Capture The Flag works. No technical skills required - just follow the steps below!</p>
 
-    <h2>🚩 The Flag:</h2>
-    <div class="flag">
-        <strong>CRYPTON{dummy_flag_123}</strong>
+        <div class="instructions">
+            <h3>📚 What is a CTF?</h3>
+            <p>A <strong>Capture The Flag (CTF)</strong> competition is a cybersecurity challenge where participants solve puzzles to find hidden "flags".</p>
+            <p>Flags are always in the format: <code>CRYPTON{example_flag_here}</code></p>
+        </div>
+
+        <div class="scoring-info">
+            <h3>🎯 How This CTF Works:</h3>
+            <div class="step">
+                <strong>Step 1:</strong> Solve challenges on this website (find flags)
+            </div>
+            <div class="step">
+                <strong>Step 2:</strong> Submit flags on our scoring platform
+            </div>
+            <div class="step">
+                <strong>Step 3:</strong> Earn points and climb the leaderboard!
+            </div>
+            <div class="step">
+                <strong>Step 4:</strong> Compete with other participants
+            </div>
+        </div>
+
+        <h2>🚩 Your First Flag:</h2>
+        <div class="flag-box">
+            <p>Here's your first flag to get started:</p>
+            <div class="flag-text">CRYPTON{dummy_flag_123}</div>
+            <p style="margin-top: 10px; color: #0c5460;">
+                ⚠️ <strong>Important:</strong> Flags are case-sensitive! Copy exactly as shown.
+            </p>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 25px 0;">
+            <h3>🔍 Practice Submission:</h3>
+            <ol>
+                <li><strong>Copy the flag above</strong> - be careful with capitalization and brackets</li>
+                <li><strong>Click the button below</strong> to open the scoring platform</li>
+                <li><strong>Enter your username</strong> (can be anything)</li>
+                <li><strong>Paste the flag</strong> and submit</li>
+                <li><strong>Check the leaderboard</strong> to see your points!</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="https://crypton-ctf-platform.onrender.com" target="_blank" class="cta-button">
+                🏆 Submit Your Flag Now
+            </a>
+            <br>
+            <a href="../../index.html" class="cta-button secondary-button">
+                ← Back to All Challenges
+            </a>
+        </div>
+
+        <div style="background: #d1ecf1; padding: 15px; border-radius: 8px; margin-top: 30px;">
+            <h3>💡 Pro Tips for Future Challenges:</h3>
+            <ul>
+                <li>Flags always start with <code>CRYPTON{</code> and end with <code>}</code></li>
+                <li>Read challenge descriptions carefully - they often contain hints</li>
+                <li>Use the hints provided if you get stuck</li>
+                <li>Google is your friend! Research is part of the game</li>
+                <li>Have fun and learn something new! 🎉</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; color: #6c757d; font-size: 0.9em;">
+            <p>Ready for real challenges? Click "Back to All Challenges" above! 🚀</p>
+        </div>
     </div>
-
-    <br>
-    <a href="../../index.html">← Back to All Challenges</a>  <!-- FIXED LINK -->
 </body>
 </html>
