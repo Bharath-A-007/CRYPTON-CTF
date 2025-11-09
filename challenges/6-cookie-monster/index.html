@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6 - Cookie Monster</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #007cba;
+            margin: 25px 0;
+        }
+        .hint-box { 
+            background: #d1ecf1; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 5px solid #17a2b8;
+            margin: 25px 0;
+        }
+        .login-box {
+            background: #fff3cd;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .login-form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            display: inline-block;
+        }
+        .cta-button {
+            background: #28a745; 
+            color: white; 
+            padding: 15px 30px; 
+            border-radius: 8px; 
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .cta-button:hover { 
+            background: #218838; 
+            transform: translateY(-2px);
+        }
+        input[type="text"], input[type="password"] {
+            padding: 10px;
+            margin: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+        .login-btn {
+            background: #007cba;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .login-btn:hover {
+            background: #005a87;
+        }
+    </style>
+    <script>
+        function handleLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple login - any credentials work for demo
+            if (username && password) {
+                // Set the flag as a cookie
+                document.cookie = "flag=CRYPTON{c00k13_m0n5t3r_4t3_1t}; path=/";
+                document.cookie = "user=" + username + "; path=/";
+                
+                alert("Login successful! Check your browser cookies for the flag 🍪");
+            } else {
+                alert("Please enter both username and password");
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>🍪 Challenge 6: Cookie Monster</h1>
+        <p><strong>Category: Web Exploitation • Points: 125</strong></p>
+        
+        <p>"The admin's favorite cookie is the flag. Can you steal it?"</p>
+
+        <div class="instructions">
+            <h3>🎯 Your Mission:</h3>
+            <p>Websites use cookies to store information in your browser. Your task is to find the flag stored in a cookie after logging in.</p>
+        </div>
+
+        <div class="login-box">
+            <h3>🔐 Demo Login System</h3>
+            <p>Use any username and password to login:</p>
+            
+            <form class="login-form" onsubmit="return handleLogin()">
+                <input type="text" id="username" placeholder="Username" required><br>
+                <input type="password" id="password" placeholder="Password" required><br>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            
+            <p><small>This is a demo - any credentials will work!</small></p>
+        </div>
+
+        <div class="hint-box">
+            <h3>💡 Hint:</h3>
+            <p>Websites store small pieces of data in your browser. Developer tools can help you see what's being saved.</p>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 25px 0;">
+            <h3>🔧 How to Find Cookies:</h3>
+            <p><strong>Chrome/Edge:</strong> F12 → Application tab → Cookies</p>
+            <p><strong>Firefox:</strong> F12 → Storage tab → Cookies</p>
+            <p><strong>Safari:</strong> Develop menu → Show Web Inspector → Storage tab</p>
+            <p>Or simply type <code>document.cookie</code> in the browser console!</p>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="../../index.html" class="cta-button">
+                ← Back to All Challenges
+            </a>
+        </div>
+    </div>
+</body>
+</html>
