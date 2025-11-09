@@ -26,6 +26,8 @@ def init_db():
         ('6-cookie-monster', 'CRYPTON{c00k13_m0n5t3r_4t3_1t}', 125),
         ('7-secret-message', 'CRYPTON{h1dd3n_1n_pl41n_s1ght}', 175),
         ('8-api-adventure', 'CRYPTON{4p1_5_4r3_fun}', 200)
+        ('9-mysterious-redirect', 'CRYPTON{url_m4nipul4t10n_ftw}', 350),
+        ('10-sql-injection', 'CRYPTON{sql1_1nj3ct10n_m45t3r}', 350)    
     ]
     
     c.executemany('INSERT OR IGNORE INTO flags (challenge, flag, points) VALUES (?, ?, ?)', challenges)
