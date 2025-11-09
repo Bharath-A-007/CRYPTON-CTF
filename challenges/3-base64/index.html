@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3 - Base64 Isn't Encryption</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .encoded-text {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.2em;
+            text-align: center;
+            margin: 20px 0;
+            border: 2px dashed #6c757d;
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #007cba;
+            margin: 25px 0;
+        }
+        .hint-box { 
+            background: #d1ecf1; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 5px solid #17a2b8;
+            margin: 25px 0;
+        }
+        .cta-button {
+            background: #28a745; 
+            color: white; 
+            padding: 15px 30px; 
+            border-radius: 8px; 
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .cta-button:hover { 
+            background: #218838; 
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔤 Challenge 3: Base64 Isn't Encryption</h1>
+        <p><strong>Category: Cryptography • Points: 50</strong></p>
+        
+        <p>"I found this weird text. What could it mean?"</p>
+
+        <div class="encoded-text">
+            Q1JZUFRPTntiYXNlNjRfaXNfbm90X3NlY3VyZX0K
+        </div>
+
+        <div class="instructions">
+            <h3>🎯 Your Mission:</h3>
+            <p>This text appears to be encoded. Your task is to decode it to reveal the hidden flag!</p>
+        </div>
+
+        <div class="hint-box">
+            <h3>💡 About Base64 Encoding:</h3>
+            <p>Base64 is an encoding method (NOT encryption) used to represent binary data as ASCII text.</p>
+            <p>It's commonly used for:</p>
+            <ul>
+                <li>Email attachments</li>
+                <li>Data URLs in web pages</li>
+                <li>Storing binary data in text formats</li>
+            </ul>
+            
+            <h4>🔍 How to Decode:</h4>
+            <ul>
+                <li><strong>Online:</strong> Search "Base64 decoder" or use websites like base64decode.org</li>
+                <li><strong>Command Line:</strong> Use <code>echo "text" | base64 --decode</code> (Linux/Mac)</li>
+                <li><strong>Python:</strong> Use <code>import base64; base64.b64decode("text")</code></li>
+                <li><strong>Browser Console:</strong> Use <code>atob("text")</code> in JavaScript</li>
+            </ul>
+        </div>
+
+        <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin: 25px 0;">
+            <h3>🔐 Encoding vs Encryption:</h3>
+            <p><strong>Encoding:</strong> Transforming data into a different format (easily reversible)</p>
+            <p><strong>Encryption:</strong> Securing data with a key (requires key to reverse)</p>
+            <p>Base64 is encoding - anyone can decode it without a key! 🔓</p>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="../../index.html" class="cta-button">
+                ← Back to All Challenges
+            </a>
+        </div>
+    </div>
+</body>
+</html>
