@@ -405,6 +405,32 @@ def get_book(book_id):
     else:
         return jsonify({'error': 'Book not found'}), 404
 
+@app.route('/redirect')
+def redirect_page():
+    page = request.args.get('page', '')
+    
+    if page == 'secret':
+        return '''
+        <div style="text-align: center; padding: 50px;">
+            <h1>🎉 Secret Page Found!</h1>
+            <div style="background: #d4edda; padding: 20px; border-radius: 8px; margin: 20px 0; display: inline-block;">
+                <h2>🚩 Your Flag:</h2>
+                <p style="font-family: monospace; font-size: 1.3em;">CRYPTON{url_m4nipul4t10n_ftw}</p>
+            </div>
+            <br>
+            <a href="/">Back to CTF Platform</a>
+        </div>
+        '''
+    else:
+        return f'''
+        <div style="text-align: center; padding: 50px;">
+            <h1>Page: {page}</h1>
+            <p>This is the {page} page. Nothing special here...</p>
+            <p>Try different page parameters!</p>
+            <a href="/">Back to CTF Platform</a>
+        </div>
+        '''
+
 # Robots.txt for Challenge 2
 @app.route('/robots.txt')
 def robots_txt():
