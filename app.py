@@ -177,6 +177,8 @@ HTML_TEMPLATE = '''
                 <li><strong>6-Cookie Monster</strong> (125 pts) - Browser storage</li>
                 <li><strong>7-Secret Message</strong> (175 pts) - Steganography</li>
                 <li><strong>8-API Adventure</strong> (200 pts) - API exploration</li>
+                 <li><strong>9-Mysterious Redirect</strong> (350 pts) - URL manipulation</li>
+                <li><strong>10-SQL Injection</strong> (350 pts) - Web security</li>
             </ul>
             <p><a href="https://bharath-a-007.github.io/CRYPTON-CTF/" target="_blank">→ Go to Challenges Website</a></p>
         </div>
@@ -197,7 +199,7 @@ HTML_TEMPLATE = '''
 
         <div class="stats">
             <h3>📊 Quick Stats</h3>
-            <p>Total Challenges: <strong>9</strong> | Total Points: <strong>800</strong></p>
+            <p>Total Challenges: <strong>11</strong> | Total Points: <strong>1500</strong></p>
             <p>Flag Format: <code>CRYPTON{example_flag}</code></p>
         </div>
     </div>
