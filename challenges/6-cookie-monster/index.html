@@ -78,24 +78,40 @@
         .login-btn:hover {
             background: #005a87;
         }
+        .success-message {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            display: none;
+        }
     </style>
     <script>
         function handleLogin() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             
-            // Simple login - any credentials work for demo
             if (username && password) {
-                // Set the flag as a cookie
-                document.cookie = "flag=CRYPTON{c00k13_m0n5t3r_4t3_1t}; path=/";
-                document.cookie = "user=" + username + "; path=/";
+                // Use LocalStorage instead of cookies (works on GitHub Pages)
+                localStorage.setItem('flag', 'CRYPTON{c00k13_m0n5t3r_4t3_1t}');
+                localStorage.setItem('user', username);
                 
-                alert("Login successful! Check your browser cookies for the flag 🍪");
+                document.getElementById('successMessage').style.display = 'block';
             } else {
                 alert("Please enter both username and password");
             }
             return false;
         }
+        
+        function checkStorage() {
+            const flag = localStorage.getItem('flag');
+            if (flag) {
+                document.getElementById('successMessage').style.display = 'block';
+            }
+        }
+        
+        // Check if already logged in when page loads
+        window.onload = checkStorage;
     </script>
 </head>
 <body>
@@ -107,7 +123,7 @@
 
         <div class="instructions">
             <h3>🎯 Your Mission:</h3>
-            <p>Websites use cookies to store information in your browser. Your task is to find the flag stored in a cookie after logging in.</p>
+            <p>Websites store data in your browser using various methods. Your task is to find the flag stored in browser storage after logging in.</p>
         </div>
 
         <div class="login-box">
@@ -120,20 +136,25 @@
                 <button type="submit" class="login-btn">Login</button>
             </form>
             
+            <div id="successMessage" class="success-message">
+                ✅ Login successful! The flag is now stored in your browser's LocalStorage.
+                <br><strong>Hint:</strong> Check Developer Tools → Application → LocalStorage
+            </div>
+            
             <p><small>This is a demo - any credentials will work!</small></p>
         </div>
 
         <div class="hint-box">
             <h3>💡 Hint:</h3>
-            <p>Websites store small pieces of data in your browser. Developer tools can help you see what's being saved.</p>
+            <p>Websites store data in your browser using LocalStorage. Developer tools can help you see what's being saved.</p>
         </div>
 
         <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 25px 0;">
-            <h3>🔧 How to Find Cookies:</h3>
-            <p><strong>Chrome/Edge:</strong> F12 → Application tab → Cookies</p>
-            <p><strong>Firefox:</strong> F12 → Storage tab → Cookies</p>
+            <h3>🔧 How to Find LocalStorage:</h3>
+            <p><strong>Chrome/Edge:</strong> F12 → Application tab → Local Storage</p>
+            <p><strong>Firefox:</strong> F12 → Storage tab → Local Storage</p>
             <p><strong>Safari:</strong> Develop menu → Show Web Inspector → Storage tab</p>
-            <p>Or simply type <code>document.cookie</code> in the browser console!</p>
+            <p>Or type <code>localStorage</code> in the browser console!</p>
         </div>
 
         <div style="text-align: center; margin: 30px 0;">
