@@ -36,15 +36,6 @@
             border-radius: 8px;
             margin: 25px 0;
         }
-        .endpoint-box {
-            background: #e9ecef;
-            padding: 20px;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            margin: 20px 0;
-            text-align: center;
-            border: 2px dashed #6c757d;
-        }
         .tool-info {
             background: #f8f9fa;
             padding: 20px;
@@ -78,6 +69,13 @@
             border-radius: 8px;
             margin: 20px 0;
         }
+        .step {
+            margin: 15px 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #6c757d;
+        }
     </style>
 </head>
 <body>
@@ -85,46 +83,70 @@
         <h1>🌐 Challenge 8: API Adventure</h1>
         <p><strong>Category: Web Exploitation • Points: 200</strong></p>
         
-        <p>"We built a simple book API. Your goal is to find the details of the book with ID 0. The endpoint is provided below."</p>
+        <p>"We built a simple book API on our CTF platform. Your goal is to explore the API and find information about the book with ID 0."</p>
 
         <div class="instructions">
             <h3>🎯 Your Mission:</h3>
-            <p>APIs (Application Programming Interfaces) allow programs to communicate with each other. Your task is to query the book API endpoint to find information about a specific book.</p>
+            <p>APIs (Application Programming Interfaces) allow programs to communicate with each other. Your task is to discover and query the book API endpoint on our CTF platform to find information about a specific book.</p>
         </div>
 
         <div class="api-info">
-            <h3>📚 Book API Endpoint:</h3>
-            <div class="endpoint-box">
-                <strong>GET</strong> https://crypton-ctf-platform.onrender.com/api/books/0
+            <h3>🔍 API Discovery:</h3>
+            <p>The book API is hosted on our main CTF platform. You'll need to:</p>
+            <div class="step">
+                <strong>Step 1:</strong> Find the API endpoint URL
             </div>
-            <p>This API returns book information in JSON format. Try accessing it to find the flag!</p>
+            <div class="step">
+                <strong>Step 2:</strong> Make a request to get book information
+            </div>
+            <div class="step">
+                <strong>Step 3:</strong> Extract the flag from the response
+            </div>
+            <p><em>Hint: APIs often follow predictable URL patterns...</em></p>
         </div>
 
         <div class="hint-box">
-            <h3>💡 Hint:</h3>
-            <p>Websites often provide data through API endpoints. You can request information directly from these endpoints using various tools.</p>
+            <h3>💡 API Hint:</h3>
+            <p>Websites often provide data through API endpoints that follow REST conventions. Common patterns include:</p>
+            <ul>
+                <li><code>/api/books</code> - Get all books</li>
+                <li><code>/api/books/1</code> - Get book with ID 1</li>
+                <li><code>/api/books/0</code> - Get book with ID 0</li>
+            </ul>
+            <p>Think about what endpoint would return information about book ID 0.</p>
         </div>
 
         <div class="tool-info">
-            <h3>🔧 How to Access the API:</h3>
+            <h3>🔧 Tools to Access APIs:</h3>
             
             <h4>Web Browser (Easiest):</h4>
-            <p>Simply visit the endpoint URL in your browser:</p>
-            <code>https://crypton-ctf-platform.onrender.com/api/books/0</code>
+            <p>Simply visit the API endpoint URL in your browser. APIs return data that browsers can display.</p>
 
             <h4>Command Line (curl):</h4>
-            <code>curl https://crypton-ctf-platform.onrender.com/api/books/0</code>
+            <code>curl https://your-target-url/api/endpoint</code>
 
-            <h4>JavaScript (Browser Console):</h4>
-            <code>fetch('https://crypton-ctf-platform.onrender.com/api/books/0')<br>.then(response => response.json())<br>.then(data => console.log(data));</code>
+            <h4>Browser Developer Tools:</h4>
+            <p>Use the JavaScript console to make API requests:</p>
+            <code>
+            fetch('/api/books/0')<br>
+            &nbsp;&nbsp;.then(response => response.json())<br>
+            &nbsp;&nbsp;.then(data => console.log(data));
+            </code>
 
-            <h4>Python:</h4>
-            <code>import requests<br>response = requests.get('https://crypton-ctf-platform.onrender.com/api/books/0')<br>print(response.json())</code>
+            <h4>Python Script:</h4>
+            <code>
+            import requests<br>
+            response = requests.get('/api/books/0')<br>
+            print(response.json())
+            </code>
+
+            <h4>Tools like Postman or Insomnia:</h4>
+            <p>Professional API testing tools that provide nice interfaces.</p>
         </div>
 
         <div class="method-examples">
-            <h3>🔍 Expected Response Format:</h3>
-            <p>The API will return JSON data that might look like:</p>
+            <h3>📖 Expected Response Format:</h3>
+            <p>APIs typically return data in JSON format. The response might look like:</p>
             <code>
             {<br>
             &nbsp;&nbsp;"id": 0,<br>
@@ -133,18 +155,17 @@
             &nbsp;&nbsp;"flag": "CRYPTON{...}"<br>
             }
             </code>
+            <p>Look for the flag field in the JSON response!</p>
         </div>
 
         <div style="background: #e7f3ff; padding: 20px; border-radius: 8px; margin: 25px 0;">
-            <h3>📖 About REST APIs:</h3>
-            <p>REST (Representational State Transfer) APIs use standard HTTP methods to perform operations:</p>
+            <h3>🔎 How to Find API Endpoints:</h3>
             <ul>
-                <li><strong>GET:</strong> Retrieve data (used in this challenge)</li>
-                <li><strong>POST:</strong> Create new data</li>
-                <li><strong>PUT:</strong> Update existing data</li>
-                <li><strong>DELETE:</strong> Remove data</li>
+                <li>Check the website's main domain (our CTF platform)</li>
+                <li>Look for common API paths like <code>/api/</code>, <code>/v1/</code>, <code>/rest/</code></li>
+                <li>Browser Developer Tools → Network tab can show API calls</li>
+                <li>Sometimes mentioned in HTML comments or JavaScript files</li>
             </ul>
-            <p>APIs are the backbone of modern web applications and mobile apps!</p>
         </div>
 
         <div style="text-align: center; margin: 30px 0;">
