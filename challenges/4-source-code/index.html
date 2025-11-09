@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>4 - Source of Truth</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #007cba;
+            margin: 25px 0;
+        }
+        .hint-box { 
+            background: #d1ecf1; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 5px solid #17a2b8;
+            margin: 25px 0;
+        }
+        .step {
+            margin: 15px 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid #6c757d;
+        }
+        .cta-button {
+            background: #28a745; 
+            color: white; 
+            padding: 15px 30px; 
+            border-radius: 8px; 
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .cta-button:hover { 
+            background: #218838; 
+            transform: translateY(-2px);
+        }
+        code {
+            background: #e9ecef;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Challenge 4: Source of Truth</h1>
+        <p><strong>Category: Web Exploitation • Points: 75</strong></p>
+        
+        <p>"Sometimes, the secret is right in front of you. Or, more specifically, in the source."</p>
+
+        <!-- CRYPTON{v13w_s0urc3_c0mm3nt} -->
+
+        <div class="instructions">
+            <h3>🎯 Your Mission:</h3>
+            <p>Web developers often leave comments and hidden information in the source code of web pages. Your task is to examine this page's source code carefully.</p>
+        </div>
+
+        <div class="hint-box">
+            <h3>💡 How to View Page Source:</h3>
+            
+            <h4>Keyboard Shortcuts:</h4>
+            <div class="step">
+                <strong>Windows/Linux:</strong> Press <code>Ctrl + U</code>
+            </div>
+            <div class="step">
+                <strong>Mac:</strong> Press <code>Command + Option + U</code>
+            </div>
+
+            <h4>Right-Click Method:</h4>
+            <div class="step">
+                <strong>Step 1:</strong> Right-click anywhere on this page
+            </div>
+            <div class="step">
+                <strong>Step 2:</strong> Select "View Page Source" or "View Source"
+            </div>
+
+            <h4>Browser Menu:</h4>
+            <div class="step">
+                <strong>Step 1:</strong> Click the three dots (menu) in your browser
+            </div>
+            <div class="step">
+                <strong>Step 2:</strong> Go to "More tools" → "Developer tools"
+            </div>
+            <div class="step">
+                <strong>Step 3:</strong> View the Elements or Sources tab
+            </div>
+        </div>
+
+        <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin: 25px 0;">
+            <h3>📖 About HTML Comments:</h3>
+            <p>HTML comments are written between <code>&lt;!--</code> and <code>--&gt;</code> and are not visible on the rendered page.</p>
+            <p>Developers use them for:</p>
+            <ul>
+                <li>Leaving notes for other developers</li>
+                <li>Temporarily hiding code</li>
+                <li>Documenting sections of the page</li>
+                <li>And sometimes... hiding flags! 🚩</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="../../index.html" class="cta-button">
+                ← Back to All Challenges
+            </a>
+        </div>
+    </div>
+</body>
+</html>
