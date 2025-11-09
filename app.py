@@ -366,7 +366,7 @@ def leaderboard():
         </table>
         
         <div style="text-align: center; margin-top: 30px; color: #6c757d;">
-            <p>Total Challenges: 9 | Total Points Available: 800</p>
+            <p>Total Challenges: 11 | Total Points Available: 1500</p>
         </div>
     </div>
 </body>
