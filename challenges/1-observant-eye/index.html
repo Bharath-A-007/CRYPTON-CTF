@@ -3,31 +3,136 @@
 <head>
     <title>1 - The Observant Eye</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        .flag { background: #fff3cd; padding: 10px; border-radius: 5px; font-family: monospace; }
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .download-btn { 
+            background: #28a745; 
+            color: white; 
+            padding: 15px 30px; 
+            border-radius: 8px; 
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px 0;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .download-btn:hover { 
+            background: #218838; 
+            transform: translateY(-2px);
+        }
+        .hint-box { 
+            background: #d1ecf1; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 5px solid #17a2b8;
+            margin: 25px 0;
+        }
+        .instructions {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #ffc107;
+            margin: 20px 0;
+        }
+        .step {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
-    <h1>🔍 Challenge 1: The Observant Eye</h1>
-    
-    <p>They say a picture is worth a thousand words. Maybe it's worth a flag?</p>
-    <p>In a real challenge, you would download an image and check its metadata.</p>
-    
-    <h2>🚩 The Flag:</h2>
-    <div class="flag">
-        <strong>CRYPTON{m3t4d4t4_1s_c00l}</strong>
-    </div>
+    <div class="container">
+        <h1>🔍 Challenge 1: The Observant Eye</h1>
+        <p><strong>Category: General Skills • Points: 25</strong></p>
+        
+        <p>"They say a picture is worth a thousand words. Maybe it's worth a flag? Download the image file and look very, very closely."</p>
+        
+        <h2>📸 Download the Secret Image:</h2>
+        <a href="secret-image.jpg" download class="download-btn">
+            🖼️ Download Secret Image (secret-image.jpg)
+        </a>
 
-    <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0;">
-        <h3>💡 How to find metadata in real images:</h3>
-        <ul>
-            <li><strong>Windows:</strong> Right-click → Properties → Details</li>
-            <li><strong>Mac:</strong> Right-click → Get Info</li>
-            <li><strong>Linux:</strong> Use <code>exiftool image.jpg</code></li>
-        </ul>
-    </div>
+        <div class="instructions">
+            <h3>🎯 Your Mission:</h3>
+            <div class="step">
+                <strong>Step 1:</strong> Download the image above
+            </div>
+            <div class="step">
+                <strong>Step 2:</strong> Find the flag hidden in the image's metadata
+            </div>
+            <div class="step">
+                <strong>Step 3:</strong> Submit the flag at the <a href="https://crypton-ctf-platform.onrender.com" target="_blank">Scoring Platform</a>
+            </div>
+        </div>
 
-    <br>
-    <a href="../../index.html">← Back to All Challenges</a>
+        <div class="hint-box">
+            <h3>💡 How to Find Image Metadata:</h3>
+            
+            <h4>Windows:</h4>
+            <ol>
+                <li>Right-click on the downloaded image</li>
+                <li>Select <strong>"Properties"</strong></li>
+                <li>Click the <strong>"Details"</strong> tab</li>
+                <li>Look for the flag in fields like <strong>Subject, Comments, or Description</strong></li>
+            </ol>
+
+            <h4>Mac:</h4>
+            <ol>
+                <li>Right-click on the image</li>
+                <li>Select <strong>"Get Info"</strong></li>
+                <li>Look for metadata fields in the info window</li>
+            </ol>
+
+            <h4>Linux (Command Line):</h4>
+            <code>exiftool secret-image.jpg</code><br>
+            <code>file secret-image.jpg</code>
+
+            <h4>Online Tool (Any OS):</h4>
+            <p>Upload to: <a href="https://www.metadata2go.com" target="_blank">metadata2go.com</a></p>
+        </div>
+
+        <div style="background: #e7f3ff; padding: 15px; border-radius: 8px; margin: 20px 0;">
+            <h3>🔍 What is Image Metadata?</h3>
+            <p>Metadata is "data about data" - hidden information stored within files that describes the file itself. This includes:</p>
+            <ul>
+                <li>Camera settings (for photos)</li>
+                <li>Date and time created</li>
+                <li>GPS coordinates (for photos)</li>
+                <li>Author information</li>
+                <li>Custom comments and descriptions</li>
+            </ul>
+            <p>In this challenge, the flag is hidden in one of these metadata fields!</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="https://crypton-ctf-platform.onrender.com" target="_blank" 
+               style="background: #007cba; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none;">
+               🏆 Submit Flag on Scoring Platform
+            </a>
+        </div>
+
+        <br>
+        <a href="../../index.html">← Back to All Challenges</a>
+    </div>
 </body>
 </html>
