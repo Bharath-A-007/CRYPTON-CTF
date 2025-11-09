@@ -3,31 +3,212 @@
 <head>
     <title>CRYPTON CTF Challenges</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        .challenge { background: #f8f9fa; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #007cba; }
-        a { text-decoration: none; color: #007cba; font-weight: bold; }
-        a:hover { color: #005a87; }
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .challenge {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 8px;
+            border-left: 5px solid;
+            transition: transform 0.2s;
+        }
+        .challenge:hover {
+            transform: translateX(5px);
+            background: #e9ecef;
+        }
+        .tutorial { border-left-color: #28a745; }
+        .easy { border-left-color: #17a2b8; }
+        .medium { border-left-color: #ffc107; }
+        .hard { border-left-color: #dc3545; }
+        
+        .category-badge {
+            display: inline-block;
+            background: #6c757d;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+        .points {
+            float: right;
+            background: #495057;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+        a { 
+            text-decoration: none; 
+            color: #495057;
+            font-weight: 600;
+        }
+        a:hover { color: #007bff; }
+        h2 { color: #343a40; border-bottom: 2px solid #e9ecef; padding-bottom: 10px; }
+        .instructions {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
     </style>
 </head>
 <body>
-    <h1>🚩 Welcome to CRYPTON CTF</h1>
-    
-    <div style="background: #e7f3ff; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
-        <h2>📋 How to Play:</h2>
+    <div class="header">
+        <h1>🚩 CRYPTON CTF 2024</h1>
+        <p>Capture The Flag Challenge Platform</p>
+        <a href="https://crypton-ctf-platform.onrender.com" target="_blank" 
+           style="color: white; background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 25px; text-decoration: none;">
+           🏆 Go to Scoring Platform
+        </a>
+    </div>
+
+    <div class="instructions">
+        <h2>📋 How to Play</h2>
         <ol>
-            <li>Solve challenges below</li>
-            <li>Find flags in format: <code>CRYPTON{...}</code></li>
-            <li>Submit flags at: <a href="https://crypton-ctf-platform.onrender.com" target="_blank">CTF Scoring Platform</a></li>
+            <li>Solve challenges below (find flags in format: <code>CRYPTON{...}</code>)</li>
+            <li>Submit flags at the <a href="https://crypton-ctf-platform.onrender.com" target="_blank">Scoring Platform</a></li>
+            <li>Earn points and climb the leaderboard!</li>
+            <li>Flags are case-sensitive</li>
         </ol>
     </div>
 
-    <h2>🎯 Challenges:</h2>
-    
-    <div class="challenge">
-        <a href="challenges/0-tutorial/">0 - Tutorial Challenge</a>
-        <p>Learn how CTF works. Perfect for beginners!</p>
+    <!-- TUTORIAL CHALLENGE -->
+    <div class="section">
+        <h2>🎓 Tutorial Challenge</h2>
+        <div class="challenge tutorial">
+            <a href="challenges/0-tutorial/">
+                0 - Dummy Challenge (Tutorial)
+            </a>
+            <span class="category-badge">General Skills</span>
+            <span class="points">15 pts</span>
+            <p style="margin: 8px 0 0 0; color: #6c757d; font-size: 0.9em;">
+                Learn how CTF works. Perfect for beginners!
+            </p>
+        </div>
     </div>
 
-    <p><em>More challenges coming soon. Check back later!</em></p>
+    <!-- EASY CHALLENGES -->
+    <div class="section">
+        <h2>🟢 Easy Challenges</h2>
+        
+        <div class="challenge easy">
+            <a href="challenges/1-observant-eye/">
+                E1 - The Observant Eye
+            </a>
+            <span class="category-badge">General Skills</span>
+            <span class="points">25 pts</span>
+            <p style="margin: 8px 0 0 0; color: #6c757d; font-size: 0.9em;">
+                They say a picture is worth a thousand words. Maybe it's worth a flag?
+            </p>
+        </div>
+
+        <div class="challenge easy">
+            <a href="challenges/2-robot-talk/">
+                E2 - Robot Talk
+            </a>
+            <span class="category-badge">Web Exploitation</span>
+            <span class="points">35 pts</span>
+            <p style="margin: 8px 0 0 0; color: #6c757d; font-size: 0.9em;">
+                Our website has a secret area just for robots. Can you find it?
+            </p>
+        </div>
+
+        <div class="challenge easy">
+            <a href="challenges/3-base64/">
+                E3 - Base64 Isn't Encryption
+            </a>
+            <span class="category-badge">Cryptography</span>
+            <span class="points">50 pts</span>
+            <p style="margin: 8px 0 0 0; color: #6c757d; font-size: 0.9em;">
+                I found this weird encoded text. What could it mean?
+            </p>
+        </div>
+
+        <div class="challenge easy">
+            <a href="challenges/4-source-code/">
+                E4 - Source of Truth
+            </a>
+            <span class="category-badge">Web Exploitation</span>
+            <span class="points">75 pts</span>
+            <p style="margin: 8px 0 0 0; color: #6c757d; font-size: 0.9em;">
+                Sometimes, the secret is right in front of you. Or in the source.
+            </p>
+        </div>
+
+        <div class="challenge easy">
+            <a href="challenges/5-caesar-cipher/">
+                E5 - The Caesar Cipher
+            </a>
+            <span class="category-badge">Cryptography</span>
+            <span class="points">100 pts</span>
+            <p style="margin: 8px 0 0 0; color: #6c757d; font-size: 0.9em;">
+                Julius Caesar used this to protect his messages. Can you decode this?
+            </p>
+        </div>
+    </div>
+
+    <!-- MEDIUM CHALLENGES -->
+    <div class="section">
+        <h2>🟡 Medium Challenges</h2>
+        
+        <div class="challenge medium">
+            <a href="challenges/6-cookie-monster/">
+                M1 - Cookie Monster
+            </a>
+            <span class="category-badge">Web Exploitation</span>
+            <span class="points">125 pts</span>
+            <p style="margin: 8px 0 0 0; color: #6c757d; font-size: 0.9em;">
+                The admin's favorite cookie is the flag. Can you steal it?
+            </p>
+        </div>
+
+        <div class="challenge medium">
+            <a href="challenges/7-secret-message/">
+                M2 - Secret Message
+            </a>
+            <span class="category-badge">Steganography</span>
+            <span class="points">175 pts</span>
+            <p style="margin: 8px 0 0 0; color: #6c757d; font-size: 0.9em;">
+                I sent you a beautiful picture. But there's more than meets the eye.
+            </p>
+        </div>
+
+        <div class="challenge medium">
+            <a href="challenges/8-api-adventure/">
+                M3 - API Adventure
+            </a>
+            <span class="category-badge">Web Exploitation</span>
+            <span class="points">200 pts</span>
+            <p style="margin: 8px 0 0 0; color: #6c757d; font-size: 0.9em;">
+                We built a simple book API. Your goal is to find the details of book with ID 0.
+            </p>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; color: #6c757d;">
+        <p>Good luck and have fun! 🎯</p>
+    </div>
 </body>
 </html>
