@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>10 - SQL Injection</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 5px solid #007cba;
+            margin: 25px 0;
+        }
+        .hint-box { 
+            background: #d1ecf1; 
+            padding: 20px; 
+            border-radius: 8px; 
+            border-left: 5px solid #17a2b8;
+            margin: 25px 0;
+        }
+        .login-box {
+            background: #fff3cd;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        .login-form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            display: inline-block;
+        }
+        input[type="text"], input[type="password"] {
+            padding: 12px;
+            margin: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            width: 250px;
+            font-size: 16px;
+        }
+        .login-btn {
+            background: #dc3545;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .login-btn:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+        .cta-button {
+            background: #6c757d; 
+            color: white; 
+            padding: 12px 24px; 
+            border-radius: 8px; 
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .cta-button:hover { 
+            background: #545b62; 
+            transform: translateY(-2px);
+        }
+        .warning {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+        }
+    </style>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple client-side simulation
+            if (username.includes("' OR") || password.includes("' OR")) {
+                document.getElementById('result').innerHTML = 
+                    '<div style="background: #d4edda; padding: 20px; border-radius: 8px; margin: 20px 0;">' +
+                    '<h3>✅ Login Successful!</h3>' +
+                    '<p>Welcome, admin! Here is your flag:</p>' +
+                    '<div style="background: #155724; color: white; padding: 15px; border-radius: 5px; font-family: monospace; font-size: 1.2em;">' +
+                    'CRYPTON{sql1_1nj3ct10n_m45t3r}' +
+                    '</div></div>';
+            } else if (username === 'admin' && password === 'password') {
+                document.getElementById('result').innerHTML = 
+                    '<div style="background: #fff3cd; padding: 15px; border-radius: 6px; margin: 15px 0;">' +
+                    '❌ Invalid credentials. Try a different approach.</div>';
+            } else {
+                document.getElementById('result').innerHTML = 
+                    '<div style="background: #f8d7da; padding: 15px; border-radius: 6px; margin: 15px 0;">' +
+                    '❌ Login failed. The admin password is not "password".</div>';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>💉 Challenge 10: SQL Injection</h1>
+        <p><strong>Category: Web Exploitation • Points: 350</strong></p>
+        
+        <p>"Our employee portal has a secure login system. Or so we thought... Can you find a way to login as admin without knowing the password?"</p>
+
+        <div class="instructions">
+            <h3>🎯 Your Mission:</h3>
+            <p>SQL Injection is a technique where attackers can manipulate SQL queries by injecting malicious code. Your task is to bypass the login authentication.</p>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Educational Purpose:</strong> This is a safe, simulated SQL injection challenge for learning purposes only.
+        </div>
+
+        <div class="login-box">
+            <h3>🔐 Employee Portal Login</h3>
+            <p>Try to login as admin:</p>
+            
+            <form class="login-form" onsubmit="handleLogin(event)">
+                <input type="text" id="username" placeholder="Username" value="admin" required><br>
+                <input type="password" id="password" placeholder="Password" required><br>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            
+            <div id="result"></div>
+            
+            <p><small>Hint: The SQL query might look like: <code>SELECT * FROM users WHERE username='[input]' AND password='[input]'</code></small></p>
+        </div>
+
+        <div class="hint-box">
+            <h3>💡 SQL Injection Basics:</h3>
+            <p>SQL queries often use single quotes (<code>'</code>) to denote strings. If user input is not properly sanitized, you can "escape" from the string and modify the query logic.</p>
+            <p>Think about how you could make the query always return true...</p>
+        </div>
+
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 25px 0;">
+            <h3>🔧 Common SQL Injection Payloads:</h3>
+            <p>Try these in the password field (keep username as "admin"):</p>
+            <ul>
+                <li><code>' OR '1'='1</code></li>
+                <li><code>' OR 1=1--</code></li>
+                <li><code>' OR 'a'='a</code></li>
+            </ul>
+            <p><small>Note: This is a simulation - real SQL injection requires backend testing.</small></p>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="../../index.html" class="cta-button">
+                ← Back to All Challenges
+            </a>
+        </div>
+    </div>
+</body>
+</html>
